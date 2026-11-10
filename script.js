@@ -51,4 +51,9 @@ serverButtons.forEach(button => {
       ". Реальное подключение пока не настроено.");
   });
 });
-
+document.getElementById("accessButton").addEventListener("click", () => {
+  showMessage(
+    "🌸 Заявка на доступ пока работает в деморежиме. " +
+    "Выдача настоящих ключей ещё не подключена."
+  );
+});
