@@ -1,0 +1,153 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #100b12;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  max-width: 480px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 24px 20px;
+  background:
+    radial-gradient(ellipse at 50% 25%, #351329 0%, transparent 55%),
+    #100b12;
+}
+
+header {
+  text-align: center;
+  padding: 15px 0 30px;
+}
+
+.brand {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.brand span {
+  color: #f278b5;
+}
+
+.subtitle {
+  color: #c58aa9;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 8px;
+}
+
+.welcome {
+  margin-bottom: 22px;
+}
+
+.welcome p {
+  color: #b99aaa;
+  margin-bottom: 5px;
+}
+
+.welcome h2 {
+  margin-top: 5px;
+}
+
+.connection {
+  text-align: center;
+  padding: 25px 15px;
+  border: 1px solid #75405e;
+  border-radius: 25px;
+  background: #1c121d;
+  box-shadow: 0 0 25px #ed58a322;
+}
+
+.flower {
+  font-size: 38px;
+}
+
+.status {
+  color: #f28bbb;
+  margin: 12px;
+  font-weight: bold;
+}
+
+.power {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  border: 3px solid #f278b5;
+  background: #211323;
+  color: #ff8fc7;
+  font-size: 55px;
+  box-shadow: 0 0 25px #f278b566;
+}
+
+.hint {
+  color: #aa92a4;
+  font-size: 12px;
+}
+
+.server, .key-card {
+  background: #211722;
+  border: 1px solid #563047;
+  border-radius: 16px;
+  padding: 18px;
+  margin-top: 20px;
+}
+
+.server {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.server small {
+  color: #e98bb8;
+}
+
+.server p, .key-card p {
+  color: #a994a5;
+  font-size: 12px;
+}
+
+.keys h3 {
+  margin-top: 28px;
+}
+
+.key-card button {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin-top: 18px;
+  background: #e76ca8;
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.features {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.feature {
+  flex: 1;
+  text-align: center;
+  padding: 17px 5px;
+  background: #211722;
+  border: 1px solid #563047;
+  border-radius: 14px;
+  line-height: 2;
+}
+
+footer {
+  text-align: center;
+  color: #79566e;
+  font-size: 10px;
+  padding: 30px 0 10px;
+}
