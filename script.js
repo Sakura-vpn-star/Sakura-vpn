@@ -20,7 +20,7 @@ function showMessage(message) {
   if (tg?.showAlert) {
     tg.showAlert(message);
   } else {
-    alert(message);
+    alert(message); 
   }
 }
 
