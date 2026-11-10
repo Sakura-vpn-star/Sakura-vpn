@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100b12">
+  <title>Sakura VPN</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">🌸 SAKURA <span>VPN</span></div>
+      <div class="subtitle">YOUR PRIVATE CONNECTION</div>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <p>Добро пожаловать,</p>
+        <h2 id="username">Sakura User</h2>
+      </section>
+
+      <section class="connection">
+        <div class="flower">🌸</div>
+        <div class="status" id="status">Не подключено</div>
+        <button class="power" id="power">
+          <span>⏻</span>
+        </button>
+        <p class="hint">Управление VPN-доступом</p>
+      </section>
+
+      <section class="server">
+        <div>
+          <small>ТЕКУЩИЙ СЕРВЕР</small>
+          <h3>🌸 Sakura Server</h3>
+          <p>Демонстрационный режим</p>
+        </div>
+        <span>›</span>
+      </section>
+
+      <section class="keys">
+        <h3>🔑 Мои ключи</h3>
+        <div class="key-card">
+          <p>Основной ключ</p>
+          <strong>Пока нет активного ключа</strong>
+          <button id="keyButton">Получить доступ</button>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="feature">🌍<br>Серверы</div>
+        <div class="feature">👤<br>Профиль</div>
+        <div class="feature">❔<br>Помощь</div>
+      </section>
+    </main>
+
+    <footer>SAKURA VPN © 2026</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
