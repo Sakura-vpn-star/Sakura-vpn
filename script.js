@@ -1,176 +1,54 @@
-* {
-  box-sizing: border-box;
+const tg = window.Telegram?.WebApp;
+
+if (tg) {
+  tg.ready();
+  tg.expand();
+
+  const user = tg.initDataUnsafe?.user;
+
+  if (user) {
+    const name = user.first_name || "Sakura User";
+
+    document.getElementById("username").textContent = name;
+    document.getElementById("profileName").textContent = name;
+    document.getElementById("profileId").textContent =
+      user.id ? String(user.id) : "Недоступен";
+  }
 }
 
-body {
-  margin: 0;
-  background: #100b12;
-  color: white;
-  font-family: Arial, sans-serif;
+function showMessage(message) {
+  if (tg?.showAlert) {
+    tg.showAlert(message);
+  } else {
+    alert(message);
+  }
 }
 
-.app {
-  max-width: 480px;
-  min-height: 100vh;
-  margin: auto;
-  padding: 22px 18px;
-  background:
-    radial-gradient(ellipse at 50% 20%, #42172f 0%, transparent 55%),
-    #100b12;
-}
+document.getElementById("keyButton").addEventListener("click", () => {
+  showMessage("🌸 У тебя пока нет выданных VPN-ключей. Этот раздел заработает после подключения серверной части.");
+});
 
-header {
-  text-align: center;
-  padding: 15px 0 28px;
-}
+const serverButtons = document.querySelectorAll(".server-option");
 
-.brand {
-  font-size: 27px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
+serverButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    serverButtons.forEach(item => {
+      item.classList.remove("selected");
+      const label = item.querySelector("span");
+      if (label) label.remove();
+    });
 
-.brand span {
-  color: #f278b5;
-}
+    button.classList.add("selected");
 
-.subtitle {
-  color: #c58aa9;
-  font-size: 10px;
-  letter-spacing: 3px;
-  margin-top: 8px;
-}
+    const label = document.createElement("span");
+    label.textContent = "Выбран";
+    button.appendChild(label);
 
-.welcome {
-  margin-bottom: 20px;
-}
+    document.getElementById("selectedServer").textContent =
+      "Выбран: " + button.dataset.server;
 
-.welcome p, .hint {
-  color: #b99aaa;
-  font-size: 13px;
-}
+    showMessage("Выбран сервер: " + button.dataset.server +
+      ". Реальное подключение пока не настроено.");
+  });
+});
 
-.welcome h2 {
-  margin-top: 5px;
-}
-
-.connection {
-  text-align: center;
-  padding: 25px 12px;
-  border: 1px solid #75405e;
-  border-radius: 24px;
-  background: #1c121d;
-  box-shadow: 0 0 25px #ed58a322;
-}
-
-.flower {
-  font-size: 38px;
-}
-
-.status {
-  color: #f28bbb;
-  margin: 12px;
-  font-weight: bold;
-}
-
-.power {
-  width: 115px;
-  height: 115px;
-  margin: 10px auto;
-  display: grid;
-  place-items: center;
-  border: 3px solid #f278b5;
-  border-radius: 50%;
-  color: #ff8fc7;
-  font-size: 55px;
-  box-shadow: 0 0 25px #f278b566;
-}
-
-.panel {
-  margin-top: 20px;
-  padding: 18px;
-  background: #211722;
-  border: 1px solid #563047;
-  border-radius: 17px;
-}
-
-.panel h3 {
-  margin-top: 0;
-  color: #f29bc2;
-}
-
-.info {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 12px 0;
-  border-bottom: 1px solid #44303e;
-  font-size: 12px;
-}
-
-.info span {
-  color: #b99aaa;
-}
-
-.info strong {
-  text-align: right;
-  overflow-wrap: anywhere;
-}
-
-.key-card, .subscription {
-  padding: 15px;
-  background: #2b1b2a;
-  border-radius: 13px;
-}
-
-.key-card p, .subscription p {
-  color: #b99aaa;
-  font-size: 12px;
-}
-
-button {
-  font: inherit;
-}
-
-.key-card button {
-  width: 100%;
-  padding: 13px;
-  margin-top: 10px;
-  border: 0;
-  border-radius: 11px;
-  background: #e76ca8;
-  color: white;
-  font-weight: bold;
-}
-
-.server-list {
-  display: grid;
-  gap: 9px;
-}
-
-.server-option {
-  padding: 14px;
-  text-align: left;
-  border: 1px solid #563047;
-  border-radius: 12px;
-  background: #2b1b2a;
-  color: white;
-}
-
-.server-option.selected {
-  border-color: #f278b5;
-  background: #432039;
-}
-
-.server-option span {
-  float: right;
-  color: #f278b5;
-  font-size: 11px;
-}
-
-footer {
-  text-align: center;
-  color: #79566e;
-  font-size: 10px;
-  padding: 30px 0 12px;
-}
